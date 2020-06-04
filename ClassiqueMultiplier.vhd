@@ -4,7 +4,7 @@
 -- 
 -- Create Date:    20:24:10 06/03/2020 
 -- Design Name: 
--- Module Name:    ClassiqueMultiplier - Behavioral 
+-- Module Name:    ClassicMultiplier - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -17,13 +17,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 
 
-entity ClassiqueMultiplier is
+entity ClassicMultiplier is
 Port ( A : in  STD_LOGIC_VECTOR (7 downto 0);
            B : in  STD_LOGIC_VECTOR (7 downto 0);
            P : out  STD_LOGIC_VECTOR (15 downto 0));
-end ClassiqueMultiplier;
+end ClassicMultiplier;
 
-architecture Behavioral of ClassiqueMultiplier is
+architecture Behavioral of ClassicMultiplier is
 
 component full_adder is
     Port ( a : in  STD_LOGIC;
