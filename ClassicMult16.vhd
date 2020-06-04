@@ -4,7 +4,7 @@
 -- 
 -- Create Date:    13:13:20 06/04/2020 
 -- Design Name: 
--- Module Name:    ClassiqueMult16 - Behavioral 
+-- Module Name:    ClassicMult16 - Behavioral 
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
@@ -26,14 +26,14 @@ use IEEE.NUMERIC_STD.ALL;
 --library UNISIM;
 --use UNISIM.VComponents.all;
 
-entity ClassiqueMult16 is
+entity ClassicMult16 is
 	Port ( A16 : in  STD_LOGIC_VECTOR (15 downto 0);
            B16 : in  STD_LOGIC_VECTOR (15 downto 0);
            prod16 : out  STD_LOGIC_VECTOR (31 downto 0));
-end ClassiqueMult16;
+end ClassicMult16;
 
-architecture Behavioral of ClassiqueMult16 is
-component ClassiqueMultiplier is
+architecture Behavioral of ClassicMult16 is
+component ClassicMultiplier is
 	Port ( A : in  STD_LOGIC_VECTOR (7 downto 0);
            B : in  STD_LOGIC_VECTOR (7 downto 0);
            P: out  STD_LOGIC_VECTOR (15 downto 0));
@@ -49,10 +49,10 @@ mHigh <= A16(15 downto 8);
 nLow <= B16(7 downto 0);
 nHigh <= B16(15 downto 8);
 ----8 bit Multiplier 
-m00 :ClassiqueMultiplier port map(mLow,nLow,mLow_nLow);
-m01 :ClassiqueMultiplier port map (mHigh,nLow,mHigh_nLow);
-m02 :ClassiqueMultiplier port map (mLow,nHigh,mLow_nHigh);
-m03 :ClassiqueMultiplier port map (mHigh,nHigh,mHigh_nHigh);
+m00 :ClassicMultiplier port map(mLow,nLow,mLow_nLow);
+m01 :ClassicMultiplier port map (mHigh,nLow,mHigh_nLow);
+m02 :ClassicMultiplier port map (mLow,nHigh,mLow_nHigh);
+m03 :ClassicMultiplier port map (mHigh,nHigh,mHigh_nHigh);
 
 mHigh_nHigh2(15 downto 0) <= mHigh_nHigh(15 downto 0);
 
